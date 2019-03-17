@@ -73,7 +73,7 @@ public class ChooseAreaFragment extends Fragment {
         titleText=(TextView)view.findViewById(R.id.title_text);
         backButton=(Button)view.findViewById(R.id.back_button);
         listView=(ListView)view.findViewById(R.id.list_view);
-        adapter=new ArrayAdapter<>(getContext(),android.R.layout.simple_list_item_1);
+        adapter=new ArrayAdapter<>(getContext(),android.R.layout.simple_list_item_1,dataList);
         listView.setAdapter(adapter);
         return view;
     }
@@ -131,7 +131,7 @@ public class ChooseAreaFragment extends Fragment {
     private void queryCities(){
         titleText.setText(selectProvince.getProvinceName());
         backButton.setVisibility(View.VISIBLE);
-        cityList=DataSupport.where("province=?",String.valueOf(selectProvince.getId())).find(City.class);
+        cityList=DataSupport.where("provinceid=?",String.valueOf(selectProvince.getId())).find(City.class);
         if (cityList.size()>0){
             dataList.clear();
             for (City city:cityList){
