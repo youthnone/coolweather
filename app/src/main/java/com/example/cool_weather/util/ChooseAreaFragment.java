@@ -228,7 +228,7 @@ public class ChooseAreaFragment extends Fragment {
         progressDialog.show();
     }
     /**
-     * 显示进度对话框
+     * 关闭进度对话框
      */
     private void closeProgressDialog(){
         if (progressDialog!=null){
